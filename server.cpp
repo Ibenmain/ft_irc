@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sghajdao <sghajdao@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibenmain <ibenmain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 05:47:13 by mlalouli          #+#    #+#             */
-/*   Updated: 2023/04/17 15:37:59 by sghajdao         ###   ########.fr       */
+/*   Updated: 2023/04/17 15:46:15 by ibenmain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ const std::string& Server::getCommand(void) const {
 
 void Server::updateEvents(int socket, int16_t filter, uint16_t flags, uint32_t fflags, intptr_t data, void *udata) {
 	struct kevent event;
-	/* initialize a struct kevent object, which is used to represent an event */
 	EV_SET(&event, socket, filter, flags, fflags, data, udata);
 	eventList.push_back(event);
 }
